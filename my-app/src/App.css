@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+  color: white;
+  background-color: rgb(39, 39, 39);
+}
+
+.App-logo {
+  height: 70px;
+  position: absolute;
+  left: 5%;
+}
+
+.App-header {
+  background-color: rgb(39, 39, 39);
+  height: 70px;
+  width: 100%;
+  color: white;
+  position: fixed;
+  z-index: 10;
+}
+
+.App-content {
+  padding-top: 70px;
+}
+
+.App-sections {
+  padding: 5%;
+  z-index: 3;
+}
+
+.App-sections-content {
+  margin: auto;
+  width: 80%;
+}
+
+.App-footer {
+  background-color: rgb(39, 39, 39);
+  height: 100px;
+  width: 100%;
+  z-index: 5;
+  padding-top: 1px;
+  border-top: thin solid darkgrey;
+  position: relative;
+}
+
+.RegisterAndLogin {
+  padding: 0;
+  position: absolute;
+  text-decoration: none;
+  font-size: 80%;
+  top: 5px;
+  right: 15px;
+  border: none;
+  background: none;
+  color: white;
+}
