@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import { withRouter, Link } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
-import './Login.css';
+import './Login&Registration.css';
 
 class Login extends Component {
 
     handleLoginClick = () => {
-        if (localStorage.getItem(`${this._email.value}`) === this._password.value){
-            console.log(`Email: ${this._email.value}`);
-            console.log(`Password: ${this._password.value}`);
+        const email = this._email.value;
+        const password = this._password.value;
+        if (email===null || email==="" + password===null || password==="") {  //check if input is empty
+            alert("All fields have to be filled!")
+        } else if (localStorage.getItem(`${email}`) === password){
             alert("Logged in successfully!");
+            this.props.history.push('/');
         } else {
-            alert("Password or email wrong!")
+            alert("Wrong password or email!");
         }
     }
 
@@ -19,11 +21,11 @@ class Login extends Component {
         document.title = "Login - VH"; //Title
 
         return (
-            <div>
-                <h2>Login</h2>
-                <input type="text" ref={input => this._email = input} placeholder="Email" /> <br/>
-                <input type="password" ref={input => this._password = input} placeholder="Password" /> <br/>
-                <Button onClick={this.handleLoginClick}>Login</Button> <br/>
+            <div className="Login_Registration_Form">
+                <h1>Login</h1>
+                <input type="email" ref={input => this._email = input} placeholder="Email" required/> <br/>
+                <input type="password" ref={input => this._password = input} placeholder="Password" required/> <br/>
+                <input type="submit" value="Log In" onClick={this.handleLoginClick}/> <br/>
 
                 <withRouter><Link to="/registration"><button className="goToRegistration_B">Not signed up yet? Register now!</button></Link></withRouter>
                 <withRouter><Link to="/"><button>Back</button></Link></withRouter>

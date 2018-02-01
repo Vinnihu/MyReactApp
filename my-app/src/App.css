@@ -11,9 +11,10 @@
 }
 
 .App-header {
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(29, 29, 29);
   height: 70px;
   width: 100%;
+  border-bottom: thin solid rgb(75, 75, 75);
   color: white;
   position: fixed;
   z-index: 10;

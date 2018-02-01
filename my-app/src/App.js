@@ -13,10 +13,9 @@ class App extends Component {
     }
   }
 
-
   render() {
     document.title = "Home - VH"; //Title
-    const isLoggedIn = this.state.isLoggedIn;
+    let isLoggedIn = this.state.isLoggedIn;
 
     let LoginButton = null;
     if (isLoggedIn) {
@@ -24,7 +23,6 @@ class App extends Component {
     } else {
       LoginButton = <withRouter><Link to="/login"><button style={{all: "inherit", color: "white", textDecoration: "none"}}>Login</button></Link></withRouter>;
     }
-
     let registerButton = <withRouter><Link to="/registration"><button onClick={this.handleLoginClick} style={{all: "inherit", color: "white", textDecoration: "none"}}>Register</button></Link></withRouter>;
 
     let parallaxHeight = 650;
@@ -57,7 +55,7 @@ class App extends Component {
             <p>Consider now provided laughter boy landlord dashwood. Often voice and the spoke. No shewing fertile village equally prepare up females as an. That do an case an what plan hour of paid. Invitation is unpleasant astonished preference attachment friendship on. Did sentiments increasing particular nay. Mr he recurred received prospect in. Wishing cheered parlors adapted am at amongst matters. </p>
           </div>
         </div>
-        <Parallax bgImage={require('./pictures/BG_Img5.jpg')} strength={parallaxStrengh} blur={{min: -8, max: 6}}>
+        <Parallax bgImage={require('./pictures/BG_Img3.jpg')} strength={parallaxStrengh} blur={{min: -8, max: 6}}>
           <h2 style={{ position: 'relative', top: '250px'}}>and some great inventions</h2>
           <div style={{ height: parallaxHeight }} />
         </Parallax>
